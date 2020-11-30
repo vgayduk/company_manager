@@ -1,0 +1,84 @@
+section {
+  padding-top: 0;
+}
+
+.my-companies header::before {
+  opacity: 1;
+}
+
+.companies-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.control {
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 45px;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 20px;
+  padding: 0 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 0 10px 1px #ccc;
+}
+
+.add-btn svg {
+  font-size: 4rem;
+}
+
+.add-btn p {
+  font-family: "Oswald", sans-serif;
+  height: 100%;
+  line-height: 40px;
+}
+
+.add-btn:hover {
+  transform: scale(0.9);
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.filter p {
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+  height: 100%;
+  line-height: 40px;
+}
+
+.filter select {
+  margin-left: 10px;
+}
+
+select {
+  height: 30px;
+  font-size: 1.5rem;
+  outline: none;
+  background: #fff;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 10px 1px #ccc;
+}
+
+.filter .submit {
+  margin: 0 10px;
+  height: 30px;
+  padding: 0 10px;
+  font-size: 1.5rem;
+}

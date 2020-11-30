@@ -1,0 +1,28 @@
+header.main {
+  background: url(../../img/header.jpg) no-repeat;
+  min-height: calc(100vh - 180px);
+  max-height: 900px;
+  background-size: cover;
+  background-position: center;
+}
+
+.inspiration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+}
+
+.inspiration p {
+  font-size: 3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  word-spacing: 0.6em;
+}
+
+.inspiration p span {
+  font-family: "Oswald", sans-serif;
+  background: #000;
+  color: #fff;
+  padding: 0 10px;
+}

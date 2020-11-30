@@ -1,0 +1,23 @@
+.login-first-page {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  height: 150px;
+  font-size: 4rem;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  z-index: 3;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  color: #818d92;
+}
+
+.login-first-page .submit {
+  font-size: 2rem;
+}

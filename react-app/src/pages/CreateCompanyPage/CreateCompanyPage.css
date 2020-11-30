@@ -1,0 +1,13 @@
+.create-company-form {
+  background: #fff;
+  z-index: 4;
+}
+
+.create-company-wrapper {
+  background: #000;
+  height: 100vh;
+}
+
+.create-company-wrapper .submit {
+  margin-top: 20px;
+}

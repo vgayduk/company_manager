@@ -1,0 +1,66 @@
+.edit-form,
+.create-company-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px 1px #ccc;
+  color: #818d92;
+  margin-top: 20px;
+}
+
+.edit-form h2,
+.create-company-form h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin: 0;
+}
+
+.edit-form .submit,
+.create-company-form .submit {
+  margin: 0;
+  font-weight: 500;
+}
+
+.edit-form .submit + .submit,
+.create-company-form .submit + .submit {
+  margin-left: 30px;
+}
+
+.input-container div + div {
+  margin-top: 20px;
+}
+
+.input-container div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container svg {
+  margin-right: 15px;
+  transform: scale(1.2);
+}
+
+.input-container div:last-of-type svg {
+  align-self: flex-start;
+}
+
+.input-container textarea {
+  margin: 0;
+}
+
+.edit-form .button-container {
+  margin-top: 20px;
+}
+
+.edit-user {
+  width: 340px;
+}
+
+.edit-user textarea {
+  width: 100%;
+}

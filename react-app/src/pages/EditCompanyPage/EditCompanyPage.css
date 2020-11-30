@@ -1,0 +1,25 @@
+.company {
+  width: 500px;
+}
+
+.company input:not(.submit),
+textarea {
+  width: 450px;
+}
+
+textarea {
+  letter-spacing: normal;
+  word-spacing: -0.2em;
+}
+
+.company textarea {
+  height: 200px;
+}
+
+.company select {
+  padding: 0px 10px;
+  box-shadow: none;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-bottom: 2px solid #aaa;
+}

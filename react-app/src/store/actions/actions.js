@@ -1,0 +1,30 @@
+export const IS_LOGGED_IN = 'IS_LOGGED_IN';
+
+export const LOG_IN_STARTED = 'LOG_IN_STARTED';
+export const LOG_IN_SECCESS = 'LOG_IN_SECCESS';
+export const LOG_IN_FAILURE = 'LOG_IN_FAILURE';
+
+export const LOG_OUT = 'LOG_OUT';
+
+export const LOG_IN_OPEN = 'LOG_IN_OPEN';
+export const LOG_IN_CLOSE = 'LOG_IN_CLOSE';
+
+export const OPEN_MODAL = 'OPEN_MODAL';
+export const CLOSE_MODAL = 'CLOSE_MODAL';
+
+export const CHANGE_INPUT = 'CHANGE_INPUT';
+
+export const UPDATE_USER = 'UPDATE_USER';
+export const DELETE_USER = 'DELETE_USER';
+
+export const GET_COMPANIES = 'GET_COMPANIES';
+export const SET_EDIT_COMPANY = 'SET_EDIT_COMPANY';
+export const SET_CURRENT_COMPANY = 'SET_CURRENT_COMPANY';
+export const UPDATE_COMPANY = 'UPDATE_COMPANY'; 
+// export const DELETE_COMPANY = 'DELETE_COMPANY';
+export const CREATE_COMPANY = 'CREATE_COMPANY';
+export const COMPANY_SUCCESSFULLY_CREATED = 'COMPANY_SUCCESSFULLY_CREATED';
+
+export const SET_FIELDS = 'SET_FIELDS';
+
+export const SKIP_ITEMS = 'SKIP_ITEMS';

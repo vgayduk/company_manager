@@ -1,0 +1,146 @@
+.signup-page-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  position: relative;
+}
+
+.signup-page-wrapper::after {
+  content: "";
+  display: block;
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transform-origin: center;
+}
+
+.signup-page-wrapper .signup-form {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 340px;
+  height: fit-content;
+  z-index: 3;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  color: #818d92;
+  box-shadow: 0 0 20px 0 #333;
+  padding: 20px 0;
+  z-index: 3;
+}
+
+.signup-page-wrapper .signup-form h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  align-self: flex-start;
+  margin: 0;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #aaa;
+  height: 25px;
+  font-size: 1.8rem;
+  color: #000;
+  outline: none;
+  width: 270px;
+}
+
+textarea {
+  margin: 20px 0;
+  height: 100px;
+  resize: none;
+}
+
+.signup-page-wrapper .signup-form textarea {
+  width: 100%;
+}
+
+input + input {
+  margin-top: 20px;
+}
+
+.submit {
+  cursor: pointer;
+  width: fit-content;
+  background: #000;
+  color: #fff;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  border: none;
+  height: auto;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.submit:hover {
+  transform: scale(0.9);
+}
+
+.signup-page-wrapper input[type="submit"] {
+  margin: 0;
+  margin-top: 20px;
+}
+
+.login-ref {
+  width: 400px;
+  height: 200px;
+  background: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, -50%);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 1.8rem;
+  z-index: 2;
+  box-shadow: 0 0 20px 0 #333;
+}
+
+.login-ref > div {
+  margin-right: 50px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-ref p {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.signup-form .input-container svg {
+  transform: scale(2);
+  margin-right: 20px;
+}
+
+.signup-form .input-container div:last-of-type svg {
+  margin-top: 5px;
+}

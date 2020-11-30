@@ -1,0 +1,32 @@
+const initialState = {
+    logInStarted: true,
+    loggedIn: false,
+    logInForm: false,
+    modal: false,
+    modalText: '',
+    emailValue: '',
+    passwordValue: '',
+    firstNameValue: '',
+    lastNameValue: '',
+    nickNameValue: '',
+    phoneValue: '',
+    positionValue: '',
+    descriptionValue: '',
+    user: null,
+    companies: null,
+    currentCompany: null,
+    cNameValue: '',
+    cAddressValue: '',
+    cServiceValue: '',
+    cEmployeesValue: '',
+    cDescriptionValue: '',
+    cTypeValue: '',
+    cPrivateValue: true,
+    isFieldsSet: false,
+    orderByValue: 'createdAt',
+    orderingWay: 'ASC',
+    skipped: 0,
+    took: 10
+};
+
+export default initialState;
