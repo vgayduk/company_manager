@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import './CompanyItem.css';
 import { MdRemoveRedEye, MdModeEdit } from "react-icons/md";
 
@@ -11,7 +11,11 @@ export default function CompanyItem(props) {
     function openCompanyInfo() {
         localStorage.setItem('currentCompany', JSON.stringify(props.company));
         dispatch(setEditCompany(props.company, {redirect: false}));
-        window.location.href = '/viewCompany';
+        if (props.publicCompany) {
+            window.location.href = '/viewPublicCompany';
+        } else {
+            window.location.href = '/viewCompany';
+        }
     }
 
     function openEditCompany() {

@@ -3,33 +3,38 @@ import {
     COMPANY_SUCCESSFULLY_CREATED
 } from '../actions/actions'
 
-export default function createCompany(jwt, company, userId) {
+export default function createCompany(jwt, company, user) {
     return async dispatch => {
         let existed = false;
 
-        await fetch(`http://localhost:8080/company/findByName/${company.name.trim()}`)
+        await fetch(`http://localhost:8080/company/findByName${company.name.trim()}`, {
+            mode: 'cors',
+            headers: {
+                'Authorization': `Bearer ${jwt}`
+            }
+        })
         .then(res => res.ok ? res.json() : Promise.reject())
-        .then(() => {
+        .then(res => {
             existed = true;
         })
-        .catch(() => console.log('Company created'))
+        .catch(err => console.log('error: ', err))
 
         if (existed) {
             dispatch(openModal('Company with this name is already existed'));
             return;
         }
 
-        fetch(`http://localhost:8080/company/${userId}`, {
+        fetch(`http://localhost:8080/company/${user.id}`, {
             method: 'POST',
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${jwt}`
             },
-            body: JSON.stringify({company: company})
+            body: JSON.stringify({company})
         })
         .then(res => res.ok ? res.json() : Promise.reject())
-        .then(res => {
+        .then(() => {
             dispatch(createdSuccessfully(company))
             window.location.href = '/myCompanies'
         })

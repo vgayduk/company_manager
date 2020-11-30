@@ -7,8 +7,9 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import bodyParser  from 'body-parser'
 import { Parser } from './parser';
+import { APP_GUARD } from '@nestjs/core';
+import { RolesGuard } from './roles/roles.guard';
 
 @Module({
   imports: [
@@ -30,14 +31,15 @@ import { Parser } from './parser';
     UsersModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: RolesGuard,
+    }
+  ],
 })
 export class AppModule implements NestModule {
-  // configure(consumer: MiddlewareConsumer) {
-  //   consumer
-  //     .apply(bodyParser)
-  //     .forRoutes('/auth/login');
-  // }
 
   configure(consumer: MiddlewareConsumer) {
     consumer

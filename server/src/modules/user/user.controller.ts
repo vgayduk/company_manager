@@ -1,5 +1,7 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query, UseGuards } from "@nestjs/common";
 import { JwtAuthGuard } from "src/auth/jwt-auth.guard";
+import { Role } from "src/roles/role.enum";
+import { Roles } from "src/roles/roles.decorator";
 import { UserService } from "./user.service";
 
 @Controller('user')
@@ -17,19 +19,19 @@ export class UserController {
     }
 
     @UseGuards(JwtAuthGuard)
-    @Get('/all') 
-    async findAllUsers(): Promise<any> {
-        return await this.userService.findAllUsers()
+    @Post('/all:orderBy/:ordering') 
+    @Roles(Role.Admin) 
+    async findAllUsers(@Param() params, @Query() query): Promise<any> {
+        return await this.userService.findAllUsers(params.orderBy, params.ordering, query)
     }
 
     // @UseGuards(JwtAuthGuard)
-    @Get('/profile/:id')
-    async findOneUser(@Param() params): Promise<any> {
-        return await this.userService.findOneUser(params.id)
-    }
+    // @Get('/profile/:id')
+    // async findOneUser(@Param() params): Promise<any> {
+    //     return await this.userService.findOneUser(params.id)
+    // }
 
-    // @UseGuards(JwtAuthGuard)
-    @Get('/findByEmail/:email')
+    @Get('/findByEmail:email')
     async findByEmail(@Param() params): Promise<any> {
         return await this.userService.findByEmail(params.email)
     }

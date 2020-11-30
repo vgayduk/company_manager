@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import './PublicCompaniesPage.css';
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -114,12 +113,12 @@ export default function PublicCompaniesPage() {
                         <input type="submit" className="submit" value="filter"></input>
                     </form>
                 </div>
-                {companies ? renderCompanies() : 'You have no companies'}
+                {companies.length ? renderCompanies() : <p className="no-companies">There is no companies</p>}
             </section>
 
             <div className="pagination">
-                <div className="submit" onClick={paginationPrevious}><MdNavigateBefore/></div>
-                <div className="submit" onClick={paginationNext}><MdNavigateNext/></div>
+                {companies.length && skipped > 0 ? <div className="submit" onClick={paginationPrevious}><MdNavigateBefore/></div> : null}
+                {companies.length === took && skipped >= 0 ? <div className="submit" onClick={paginationNext}><MdNavigateNext/></div> : null}                
             </div>
         </div>
      )

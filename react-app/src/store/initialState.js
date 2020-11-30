@@ -13,7 +13,9 @@ const initialState = {
     positionValue: '',
     descriptionValue: '',
     user: null,
-    companies: null,
+    users: [],
+    currentUser: null,
+    companies: [],
     currentCompany: null,
     cNameValue: '',
     cAddressValue: '',
@@ -26,7 +28,8 @@ const initialState = {
     orderByValue: 'createdAt',
     orderingWay: 'ASC',
     skipped: 0,
-    took: 10
+    took: 10,
+    burgerMenu: false
 };
 
 export default initialState;

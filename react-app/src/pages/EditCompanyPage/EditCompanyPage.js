@@ -155,7 +155,7 @@ export default function EditCompanyPage() {
                     </div>
                 </div>
                 <div className="button-container">
-                    <RedirectLink className="submit" title={"Back"} linkTo={"/myCompanies"} />
+                    <RedirectLink className="submit" title={"Go to main"} linkTo={"/"} />
                     <input className="submit" type="submit" name="submit" value="Save" />
                 </div>
             </form>

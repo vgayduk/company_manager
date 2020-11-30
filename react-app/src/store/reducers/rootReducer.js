@@ -1,6 +1,5 @@
 import { 
     IS_LOGGED_IN,
-    LOG_IN_STARTED,
     LOG_IN_SECCESS,
     LOG_IN_FAILURE,
     LOG_IN_OPEN,
@@ -16,7 +15,10 @@ import {
     SET_FIELDS,
     UPDATE_COMPANY,
     COMPANY_SUCCESSFULLY_CREATED,
-    SKIP_ITEMS
+    SKIP_ITEMS,
+    GET_ALL_USERS,
+    SET_CURRENT_USER,
+    CHANGE_BURGER
 } from '../actions/actions'
 import initialState from '../initialState'
 
@@ -24,7 +26,6 @@ function rootReducer(state = initialState, action) {
     switch(action.type) {
         case IS_LOGGED_IN: return {...state, loggedIn: state.loggedIn};
         
-        case LOG_IN_STARTED: return {...state, logInStarted: true}
         case LOG_IN_SECCESS: return {...state, loggedIn: true, logInStarted: false, logInForm: false, emailValue: '', passwordValue: '', user: action.payload};
         case LOG_IN_FAILURE: return {...state, loggedIn: false, logInStarted: false, error: action.payload};
 
@@ -50,6 +51,12 @@ function rootReducer(state = initialState, action) {
         case COMPANY_SUCCESSFULLY_CREATED: return {...state, currentCompany: action.payload}
 
         case SKIP_ITEMS: return {...state, skipped: action.payload.skip, took: action.payload.take}
+
+        case GET_ALL_USERS: return {...state, users: action.payload.users, skipped: action.payload.skip, took: action.payload.take}
+
+        case SET_CURRENT_USER: return {...state, currentUser: action.payload};
+
+        case CHANGE_BURGER: return {...state, burgerMenu: !state.burgerMenu}
 
         default: return state;
     }

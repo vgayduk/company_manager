@@ -69,3 +69,27 @@
   height: 5px;
   background: #fff;
 }
+
+@media (max-width: 850px) {
+  .logo {
+    height: 60px;
+  }
+
+  .logo div:last-of-type::before,
+  .logo div:last-of-type::after,
+  .logo div:first-of-type::after {
+    height: 3px;
+  }
+}
+
+@media (max-width: 670px) {
+  .logo {
+    top: 5px;
+  }
+}
+
+@media (max-width: 360px) {
+  .logo {
+    
+  }
+}

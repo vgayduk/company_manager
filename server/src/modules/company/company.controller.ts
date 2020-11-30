@@ -1,6 +1,8 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query, UseGuards } from "@nestjs/common";
 import { CompanyService } from "./company.service";
 import { JwtAuthGuard } from "src/auth/jwt-auth.guard";
+import { Roles } from "src/roles/roles.decorator";
+import { Role } from "src/roles/role.enum";
 
 @Controller('company')
 export class CompanyController {
@@ -9,25 +11,20 @@ export class CompanyController {
     ) {}
 
     @UseGuards(JwtAuthGuard)
-    @Get('/all') 
-    async findAllCompanies(): Promise<any> {
-        return await this.companyService.findAllCompanies()
-    }
-
-    @UseGuards(JwtAuthGuard)
     @Get('/:id/:orderBy/:ordering')
-    async findById(@Param() params, @Query() query): Promise<any> {
-        return await this.companyService.findById(params.id, params.orderBy, params.ordering, query)
+    async findByUserId(@Param() params, @Query() query): Promise<any> {
+        return await this.companyService.findByUserId(params.id, params.orderBy, params.ordering, query)
     }
 
     @UseGuards(JwtAuthGuard)
-    @Get('/:orderBy/:ordering')
+    @Get('/findPublic:orderBy/:ordering')
     async findPublic(@Param() params, @Query() query): Promise<any> {
         return await this.companyService.findPublic(params.orderBy, params.ordering, query)
     }
 
-    @Get('/findByName/:name')
-    async findByEmail(@Param() params): Promise<any> {
+    @UseGuards(JwtAuthGuard)
+    @Get('/findByName:name')
+    async findByName(@Param() params): Promise<any> {
         return await this.companyService.findByName(params.name)
     }
 
@@ -35,6 +32,13 @@ export class CompanyController {
     @Post('/:userId')
     async createCompany(@Param() params, @Body() body): Promise<any> {
         return await this.companyService.createCompany(body.company, params.userId)
+    }
+
+    @UseGuards(JwtAuthGuard)
+    @Post('/all:orderBy/:ordering')
+    @Roles(Role.Admin) 
+    async findAllCompanies(@Param() params, @Query() query): Promise<any> {
+        return await this.companyService.findAllCompanies(params.orderBy, params.ordering, query)
     }
 
     @UseGuards(JwtAuthGuard)

@@ -2,7 +2,9 @@ import {
     UPDATE_USER
 } from '../actions/actions'
 
-export default function updateUser(jwt, id, user) {
+export default function updateUser(jwt, id, user, options = {
+    adminChange: false
+}) {
     return dispatch => {
         fetch(`http://localhost:8080/user/${id}`, {
             method: 'PATCH',
@@ -15,9 +17,11 @@ export default function updateUser(jwt, id, user) {
         })
         .then(res => res.ok ? res.json() : Promise.reject())
         .then(res => {
-            dispatch(sendUpdate(res))
-            localStorage.setItem('user', JSON.stringify(res))
-            localStorage.setItem('companies', JSON.stringify(JSON.parse(res).company))
+            if (!options.adminChange) {
+                dispatch(sendUpdate(res))
+                localStorage.setItem('user', JSON.stringify(res))
+                localStorage.setItem('companies', JSON.stringify(JSON.parse(res).company))
+            }
         })
         .catch(err => console.log(err))
     }

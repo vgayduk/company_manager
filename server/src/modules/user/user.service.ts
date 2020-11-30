@@ -10,9 +10,11 @@ export class UserService {
         private userRepository: Repository<User>
     ) {}
 
-    async findAllUsers(): Promise<any> {
+    async findAllUsers(orderBy, ordering, query): Promise<any> {
         return await this.userRepository.createQueryBuilder('users')
-        .leftJoinAndSelect('users.company', 'company')
+        .orderBy(`users.${orderBy}`, ordering)
+        .skip(query.skip)
+        .take(query.take)
         .getMany()
     }
 

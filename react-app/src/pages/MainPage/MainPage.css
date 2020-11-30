@@ -18,6 +18,8 @@ header.main {
   font-weight: 600;
   text-transform: uppercase;
   word-spacing: 0.6em;
+  text-align: center;
+  line-height: 40px;
 }
 
 .inspiration p span {
@@ -25,4 +27,10 @@ header.main {
   background: #000;
   color: #fff;
   padding: 0 10px;
+}
+
+@media (max-width: 850px) {
+  header {
+    padding-top: 100px;
+  }
 }

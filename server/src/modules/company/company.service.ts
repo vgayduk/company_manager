@@ -10,12 +10,6 @@ export class CompanyService {
         private companyRepository: Repository<Company>
     ) {}
 
-    async findAllCompanies(): Promise<any> {
-        return await this.companyRepository.createQueryBuilder('companies')
-        .leftJoinAndSelect('companies.user', 'user')
-        .getMany()
-    }
-
     async createCompany(company, userId): Promise<any> {
         let newCompany = await this.companyRepository.save(company)          
 
@@ -33,7 +27,7 @@ export class CompanyService {
         return await this.companyRepository.delete(id)
     }
 
-    async findById(id, orderBy, ordering, query): Promise<any> {
+    async findByUserId(id, orderBy, ordering, query): Promise<any> {
         return await this.companyRepository.createQueryBuilder('companies')
             .orderBy(`companies.${orderBy}`, ordering)
             .where(`companies.userId = ${id}`)
@@ -56,12 +50,22 @@ export class CompanyService {
             .getOne()
     }
 
-    async findPublic(orderBy, ordering, query): Promise<any> {        
+    async findPublic(orderBy, ordering, query): Promise<any> {
         return await this.companyRepository.createQueryBuilder('companies')
             .orderBy(`companies.${orderBy}`, ordering)
             .where(`companies.private = false`)
+            .leftJoinAndSelect('companies.user', 'user')
             .skip(query.skip)
             .take(query.take)
             .getMany()
+    }
+
+    async findAllCompanies(orderBy, ordering, query): Promise<any> {
+        return await this.companyRepository.createQueryBuilder('companies')
+        .orderBy(`companies.${orderBy}`, ordering)
+        .leftJoinAndSelect('companies.user', 'user')
+        .skip(query.skip)
+        .take(query.take)
+        .getMany()
     }
 }

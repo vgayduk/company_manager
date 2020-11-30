@@ -12,7 +12,7 @@ export default function registerUser(user) {
             user: user
         }
         
-        await fetch(`http://localhost:8080/user/findByEmail/${body.user.email.trim()}`)
+        await fetch(`http://localhost:8080/user/findByEmail${body.user.email.trim()}`)
         .then(res => res.ok ? res.json() : Promise.reject())
         .then(res => {
             existed = true;

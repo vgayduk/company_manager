@@ -1,0 +1,19 @@
+.user-item {
+  padding: 20px;
+}
+
+.user-item span {
+  font-weight: 700;
+}
+
+.usernames {
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.users-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

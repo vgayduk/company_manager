@@ -53,50 +53,8 @@
   flex-direction: column;
 }
 
-input,
-textarea {
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid #aaa;
-  height: 25px;
-  font-size: 1.8rem;
-  color: #000;
-  outline: none;
-  width: 270px;
-}
-
-textarea {
-  margin: 20px 0;
-  height: 100px;
-  resize: none;
-}
-
 .signup-page-wrapper .signup-form textarea {
   width: 100%;
-}
-
-input + input {
-  margin-top: 20px;
-}
-
-.submit {
-  cursor: pointer;
-  width: fit-content;
-  background: #000;
-  color: #fff;
-  padding: 8px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 3px;
-  border: none;
-  height: auto;
-  text-transform: uppercase;
-  transition: all 0.2s;
-}
-
-.submit:hover {
-  transform: scale(0.9);
 }
 
 .signup-page-wrapper input[type="submit"] {
@@ -143,4 +101,16 @@ input + input {
 
 .signup-form .input-container div:last-of-type svg {
   margin-top: 5px;
+}
+
+@media (max-width: 840px) {
+  .login-ref {
+    display: none;
+  }
+}
+
+@media (max-width: 350px) {
+  .signup-page-wrapper .signup-form {
+    width: 100%;
+  }
 }

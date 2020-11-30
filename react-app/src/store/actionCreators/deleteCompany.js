@@ -1,5 +1,5 @@
 import { 
-    // DELETE_COMPANY
+    DELETE_COMPANY
 } from '../actions/actions'
 
 export default function deleteCompany(jwt, id) {
@@ -20,7 +20,7 @@ export default function deleteCompany(jwt, id) {
 
     function deleteCompany() {
         return {
-            // type: DELETE_COMPANY
+            type: DELETE_COMPANY
         }
     }
 }

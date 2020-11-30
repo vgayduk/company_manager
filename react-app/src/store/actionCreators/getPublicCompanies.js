@@ -9,7 +9,7 @@ export default function getPublicCompanies(jwt, options = {
     take: 10
 }) {
     return dispatch => {
-        fetch(`http://localhost:8080/company/${options.orderBy}/${options.ordering}?skip=${options.skip}&take=${options.take}`, {
+        fetch(`http://localhost:8080/company/findPublic${options.orderBy}/${options.ordering}?skip=${options.skip}&take=${options.take}`, {
             headers: {
                 'Authorization': `Bearer ${jwt}`
             }

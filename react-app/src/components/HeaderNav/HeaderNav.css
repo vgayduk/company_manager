@@ -54,3 +54,121 @@ nav li:hover a::after {
   background: #fff;
   width: 100%;
 }
+
+.burger-menu {
+  position: fixed;
+  background: #fff;
+  height: 100vh;
+  width: 300px;
+  top: 0;
+  left: -310px;
+  box-shadow: 0 0 10px 1px #ccc;
+  transition: all 0.3s ease-out;
+}
+
+.burger-menu ul {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  padding-top: 50px;
+}
+
+.burger-menu ul li + li {
+  margin-top: 20px;
+}
+
+.burger-menu a {
+  color: #000;
+  font-size: 3rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.burger-menu a::after {
+  background: #000;
+}
+
+.burger-menu a:hover::after {
+  background: #000;
+}
+
+.burger-menu.active {
+  left: 0;
+}
+
+.burger-button {
+  display: none;
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  top: -15px;
+  left: 60px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.burger-button div {
+  height: 2px;
+  width: 100%;
+  background: #fff;
+  transition: all 0.5s;
+  position: absolute;
+  opacity: 1;
+}
+
+.burger-button div:nth-of-type(1) {
+  top: 0;
+}
+
+.burger-button div:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.burger-button div:nth-of-type(3) {
+  bottom: 0;
+}
+
+.burger-button.active {
+  left: 250px;
+  top: -70px;
+  z-index: 5;
+}
+
+.burger-button.active div {
+  background: #000;
+}
+
+.burger-button.active div:nth-of-type(1) {
+  transform: rotate(-45deg) translateX(1px);
+  top: 50%;
+}
+
+.burger-button.active div:nth-of-type(2) {
+  opacity: 0;
+}
+
+.burger-button.active div:nth-of-type(3) {
+  transform: rotate(45deg) translateX(1px);
+  bottom: 50%;
+}
+
+@media (max-width: 850px) {
+  nav ul {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 670px) {
+  nav ul {
+    display: none;
+  }
+
+  .burger-button {
+    display: block;
+  }
+
+  .login {
+    top: -15px;
+  }
+}

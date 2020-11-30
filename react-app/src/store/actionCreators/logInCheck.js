@@ -1,5 +1,4 @@
 import {
-    LOG_IN_STARTED,
     LOG_IN_SECCESS,
     LOG_IN_FAILURE
 } from '../actions/actions'
@@ -8,7 +7,6 @@ export default function logInCheck(jwt, options = {
     redirect: false
 }) {
     return dispatch => {
-        dispatch(logInStarted());
 
         if (!jwt) {
             dispatch(logInFailure({statusCode: 401}))
@@ -35,13 +33,7 @@ export default function logInCheck(jwt, options = {
             if (options.redirect) window.location.href = '/logInFirst'
         })
     }
-
-    function logInStarted() {
-        return {
-            type: LOG_IN_STARTED
-        }
-    }
-
+    
     function logInSuccess(user) {
         return {
             type: LOG_IN_SECCESS,

@@ -1,5 +1,4 @@
 import {
-    LOG_IN_STARTED,
     LOG_IN_SECCESS,
     LOG_IN_FAILURE,
     OPEN_MODAL
@@ -7,8 +6,6 @@ import {
 
 export default function logIn(email, password) {
     return dispatch => {
-        dispatch(logInStarted());
-
         const body = {
             email: email, 
             password: password
@@ -32,12 +29,6 @@ export default function logIn(email, password) {
             dispatch(openModal('There is no such user with this email and password'))
             dispatch(logInFailure(err))
         })
-    }
-
-    function logInStarted() {
-        return {
-            type: LOG_IN_STARTED
-        }
     }
 
     function logInSuccess(res) {

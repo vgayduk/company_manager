@@ -124,12 +124,12 @@ export default function MyCompaniesPage() {
                         <input type="submit" className="submit" value="filter"></input>
                     </form>
                 </div>
-                {companies ? renderCompanies() : 'You have no companies'}
+                {companies.length ? renderCompanies() : <p className="no-companies">You have no companies</p>}
             </section>
 
             <div className="pagination">
-                <div className="submit" onClick={paginationPrevious}><MdNavigateBefore/></div>
-                <div className="submit" onClick={paginationNext}><MdNavigateNext/></div>
+                {companies.length && skipped > 0 ? <div className="submit" onClick={paginationPrevious}><MdNavigateBefore/></div> : null}
+                {companies.length === took && skipped >= 0 ? <div className="submit" onClick={paginationNext}><MdNavigateNext/></div> : null}                
             </div>
         </div>
      )

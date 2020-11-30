@@ -68,7 +68,7 @@ export default function CreateCompanyPage() {
             }
         }
 
-        dispatch(createCompany(jwt, newCompany, user.id))
+        dispatch(createCompany(jwt, newCompany, user))
     }
 
     function openModal(text) {

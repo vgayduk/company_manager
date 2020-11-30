@@ -28,3 +28,402 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.pagination .submit {
+  font-size: 3rem;
+  padding: 0 10px;
+}
+
+.pagination .submit + .submit {
+  margin-left: 20px;
+}
+
+.no-companies {
+  font-size: 2rem;
+}
+
+.edit-form,
+.create-company-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px 1px #ccc;
+  color: #818d92;
+  margin-top: 20px;
+}
+
+.edit-form h2,
+.create-company-form h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin: 0;
+}
+
+.edit-form .submit,
+.create-company-form .submit {
+  margin: 0;
+  font-weight: 500;
+}
+
+.edit-form .submit + .submit,
+.create-company-form .submit + .submit {
+  margin-left: 30px;
+}
+
+.input-container div + div {
+  margin-top: 20px;
+}
+
+.input-container div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container svg {
+  margin-right: 15px;
+  transform: scale(1.2);
+}
+
+.input-container div:last-of-type svg {
+  align-self: flex-start;
+}
+
+.input-container textarea {
+  margin: 0;
+}
+
+.edit-form .button-container {
+  margin-top: 20px;
+}
+
+textarea {
+  margin: 20px 0;
+  height: 100px;
+  resize: none;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #aaa;
+  font-size: 1.8rem;
+  color: #000;
+  outline: none;
+  width: 270px;
+}
+
+input + input {
+  margin-top: 20px;
+}
+
+.submit {
+  cursor: pointer;
+  width: fit-content;
+  background: #000;
+  color: #fff;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  border: none;
+  height: auto;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.submit:hover {
+  transform: scale(0.9);
+}
+
+.control {
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 45px;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.filter p {
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+  height: 100%;
+  line-height: 40px;
+}
+
+.filter select {
+  margin-left: 10px;
+}
+
+select {
+  height: 30px;
+  font-size: 1.5rem;
+  outline: none;
+  background: #fff;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 10px 1px #ccc;
+}
+
+.filter .submit {
+  margin: 0 10px;
+  height: 30px;
+  padding: 0 10px;
+  font-size: 1.5rem;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nick-name {
+  font-style: italic;
+}
+
+.profile section {
+  font-size: 1.8rem;
+  padding-top: 20px;
+}
+
+.company-item,
+.user-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 265px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 40px;
+  box-shadow: 0 0 10px 1px #ccc;
+  margin: 20px;
+  font-size: 1.8rem;
+}
+
+.description {
+  margin-top: 20px;
+  position: relative;
+  height: 95px;
+}
+
+.description p {
+  height: 100%;
+  overflow: hidden;
+}
+
+.description::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #ccc;
+  top: -8px;
+}
+
+.company-item::after,
+.user-item::after {
+  content: "";
+  font-size: 3rem;
+  display: block;
+  position: absolute;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  bottom: 10px;
+  right: 0;
+  width: 100%;
+  height: 23px;
+}
+
+.buttons {
+  display: flex;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.btn {
+  width: 30px;
+  height: 30px;
+  box-shadow: 0 0 10px 1px #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn + .btn {
+  margin-left: 10px;
+}
+
+.btn:hover {
+  transform: scale(0.9);
+}
+
+.form-wrapper,
+.modal-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.login-form,
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  z-index: 3;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  color: #818d92;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #aaa;
+  height: 25px;
+  font-size: 1.8rem;
+  color: #000;
+  outline: none;
+  width: 270px;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  width: fit-content;
+  background: #000;
+  color: #fff;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  border: none;
+  height: auto;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  margin-bottom: -40px;
+}
+
+input[type="submit"]:hover {
+  transform: scale(0.9);
+}
+
+@media (max-width: 850px) {
+  html {
+    font-size: 8px;
+  }
+
+  .company-item,
+  .user-item {
+    height: 215px;
+    width: 350px;
+  }
+
+  .company-item::after,
+  .user-item::after {
+    bottom: 0;
+  }
+
+  .description {
+    margin-top: 10px;
+    height: 80px;
+  }
+
+  .description::before {
+    top: -4px;
+  }
+}
+
+@media (max-width: 670px) {
+  .control {
+    justify-content: center;
+  }
+
+  .filter {
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .control {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .submit + .submit {
+    margin: 10px 0 !important;
+  }
+}
+
+@media (max-width: 360px) {
+  html {
+    font-size: 7px;
+  }
+
+  .company-item,
+  .user-item {
+    height: 173px;
+  }
+
+  .description {
+    margin-top: 10px;
+    height: 55px;
+  }
+
+  .input-container div + div {
+    margin-top: 10px;
+  }
+}

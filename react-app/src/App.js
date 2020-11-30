@@ -13,6 +13,11 @@ import EditCompanyPage from './pages/EditCompanyPage/EditCompanyPage';
 import CompanyViewPage from './pages/CompanyViewPage/CompanyViewPage';
 import CreateCompanyPage from './pages/CreateCompanyPage/CreateCompanyPage';
 import PublicCompaniesPage from './pages/PublicCompaniesPage/PublicCompaniesPage';
+import PublicCompanyViewPage from './pages/PublicCompanyViewPage/PublicCompanyViewPage';
+import AllCompaniesPage from './pages/AllCompaniesPage/AllCompaniesPage';
+import AllUsersPage from './pages/AllUsersPage/AllUsersPage';
+import EditCurrentUserPage from './pages/EditCurrentUserPage/EditCurrentUserPage';
+import UserDetailsPage from './pages/UserDetailsPage/UserDetailsPage';
 
 function App() {
 
@@ -29,6 +34,11 @@ function App() {
         <Route exact path="/viewCompany" component={CompanyViewPage} />
         <Route exact path="/createCompany" component={CreateCompanyPage} />
         <Route exact path="/publicCompanies" component={PublicCompaniesPage} />
+        <Route exact path="/viewPublicCompany" component={PublicCompanyViewPage} />
+        <Route exact path="/viewAllCompanies" component={AllCompaniesPage} />
+        <Route exact path="/viewAllUsers" component={AllUsersPage} />
+        <Route exact path="/editCurrentUser" component={EditCurrentUserPage} />
+        <Route exact path="/userDetails" component={UserDetailsPage} />
       </Switch>
 
     </div>

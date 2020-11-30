@@ -2,7 +2,9 @@ import {
     DELETE_USER
 } from '../actions/actions'
 
-export default function deleteAccaunt(jwt, id) {
+export default function deleteAccaunt(jwt, id, options = {
+    adminDelete: false
+}) {
     return dispatch => {
         fetch(`http://localhost:8080/user/${id}`, {
             method: 'DELETE',
@@ -12,11 +14,15 @@ export default function deleteAccaunt(jwt, id) {
         })
         .then(res => res.ok ? res.json() : Promise.reject())
         .then(() => {
-            localStorage.removeItem('jwt')
-            localStorage.removeItem('user')
-            localStorage.removeItem('companies')
-            dispatch(deleteUser())
-            window.location.href = '/'
+            if (!options.adminDelete) {
+                localStorage.removeItem('jwt')
+                localStorage.removeItem('user')
+                localStorage.removeItem('companies')
+                dispatch(deleteUser())
+                window.location.href = '/'
+            } else {
+                window.location.href = '/viewAllUsers'
+            }
         })
         .catch(err => console.log(err))
     }
